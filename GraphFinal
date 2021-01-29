@@ -1,0 +1,53 @@
+# mount data
+from google.colab import drive
+drive.mount('/content/drive')
+
+# import libraries
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_excel('/content/drive/MyDrive/PTDataScience/PandasForDataManipulation/Data.xlsx')
+df.head()
+
+sportfilter2017 = df['Sport'] == 'Football'
+sportfilter2013 = df['Sport'] == 'Football'
+sportfilter2008 = df['Sport'] == 'Football'
+
+#Using var here
+
+sport_17 = df.loc[sportfilter2017]
+sport_13 = df.loc[sportfilter2013]
+sport_08 = df.loc[sportfilter2008]
+
+df = pd.DataFrame({'Sports':['Football', 'Basketball', 'Baseball'], 'votes':[37, 11, 9]});
+ax = df.plot.bar(x='Sports', y='votes', rot=5);
+ax.set_ylabel('Number Of Votes', fontsize = 10)
+ax.set_title('2017 Total Votes', fontsize = 16);
+
+df = pd.DataFrame({'Sports':['Football', 'Basketball', 'Baseball'], 'votes':[41, 9, 10]});
+ax = df.plot.bar(x='Sports', y='votes', rot=5);
+ax.set_ylabel('Number Of Votes', fontsize = 10)
+ax.set_title('2008 Total Votes', fontsize = 16);
+
+df = pd.DataFrame({'Sports':['Football', 'Basketball', 'Baseball'], 'votes':[39, 12, 14]});
+ax = df.plot.bar(x='Sports', y='votes', rot=5);
+ax.set_ylabel('Number Of Votes', fontsize = 10)
+ax.set_title('2013 Total Votes', fontsize = 16);
+
+##Combining all graphs for a better view of the changes over the years
+
+
+df = pd.DataFrame({'Sports':['Football', 'Basketball', 'Baseball'], 'votes':[41, 9, 10]});
+ax = df.plot.bar(x='Sports', y='votes', rot=5);
+ax.set_ylabel('Number Of Votes', fontsize = 10)
+ax.set_title('2008 Total Votes', fontsize = 16);
+
+df = pd.DataFrame({'Sports':['Football', 'Basketball', 'Baseball'], 'votes':[39, 12, 14]});
+ax = df.plot.bar(x='Sports', y='votes', rot=5);
+ax.set_ylabel('Number Of Votes', fontsize = 10)
+ax.set_title('2013 Total Votes', fontsize = 16);
+
+df = pd.DataFrame({'Sports':['Football', 'Basketball', 'Baseball'], 'votes':[37, 11, 9]});
+ax = df.plot.bar(x='Sports', y='votes', rot=5);
+ax.set_ylabel('Number Of Votes', fontsize = 10)
+ax.set_title('2017 Total Votes', fontsize = 16);
